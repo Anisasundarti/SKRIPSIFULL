@@ -16,7 +16,23 @@
             margin-top: 0;
         }
 
-       
+        .legenda-tanam-kota {
+            width: 15px;
+            height: 13px;
+            display: inline-block;
+        }
+
+        .semak_belukar {
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAFUlEQVQYV2NkQAOMRAn8Z2BggKsEAA3qAQXsNBkiAAAAAElFTkSuQmCC) repeat, #FF7F50;
+        }
+
+        .sawah {
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAJUlEQVQYV2NkwAT/GdHE/jMwMDAiC4IFQIpggjABuEq4CqhR/wEbSQcEChQUOwAAAABJRU5ErkJggg==) repeat, #008080;
+        }
+
+        .rawa {
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAN0lEQVQoU2NkIAIwEqHmPyFF/xkYGBgJKQJbhEsR2ASYU7ApQlGAzyQU/yCbhGECunU4FYAUAgBp4wYJ31jKswAAAABJRU5ErkJggg==) repeat, #778899;
+        }
 
     </style>
 @endsection
@@ -114,7 +130,30 @@
 
         }
 
-        
+        if ('T_Lahan_12' in feature.properties) {
+            const T_Lahan_12 = {
+                "Permukiman": () => warna.fillColor = "#D2691E", //Chocolate
+                "Semak Belukar": () => {
+                    warna.fillColor = "#FF7F50" //Coral
+                    warna.fill = "url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAFUlEQVQYV2NkQAOMRAn8Z2BggKsEAA3qAQXsNBkiAAAAAElFTkSuQmCC)";
+                },
+                "Sawah": () => {
+                    warna.fillColor = "#008080", //Teal
+                    warna.fill = "url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAJUlEQVQYV2NkwAT/GdHE/jMwMDAiC4IFQIpggjABuEq4CqhR/wEbSQcEChQUOwAAAABJRU5ErkJggg==)";
+                },
+                "Rawa": () => {
+                    warna.fillColor = "#778899", //Light Slate Gray
+                    warna.fill = "url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAN0lEQVQoU2NkIAIwEqHmPyFF/xkYGBgJKQJbhEsR2ASYU7ApQlGAzyQU/yCbhGECunU4FYAUAgBp4wYJ31jKswAAAABJRU5ErkJggg==)";
+                },
+                "Hutan Rakyat": () => warna.fillColor = "#7FFF00", //Chartreuse
+                "Perkebunan": () => warna.fillColor = "#006400", //Dark Green
+                "Taman Kota": () => warna.fillColor = "#9ACD32", //Yellow Green
+            }
+            warna.weight = 1;
+            warna.fillOpacity = 0.6;
+            T_Lahan_12[feature.properties.T_Lahan_12];
+            return warna;
+        }
     }
 
     // POP UP PETA
@@ -152,12 +191,27 @@
             "Pencurian Pemberatan (CURAT)": 'blue',
             "Pencurian dengan Kekerasan (CURAS)": 'yellow',
 
-            
+            // garis jalan
+            "Ada Lampu Tidak Nyala": '#CD5C5C',
+            "Ada Penerangan Ada Pemukiman": '#FF1493',
+            "Tidak Nyala Jarang Pemukiman": '#8B4513',
+            "Tidak Ada Penerangan Jarang Pemukiman": '#000080',
+            "Tidak Ada Penerangan Ada Pemukiman": '#2F4F4F',
+            "Tidak Ada Penerangan Tidak Ada Pemukiman": '#000000',
+
             // kecamatan
             "Kec. Samarinda Seberang": '#D928C9',
             "Kec. Loa Janan Ilir": '#998E0A',
 
-            
+            tutupan
+            "Permukiman": '#D2691E',
+            "Semak Belukar": '#FF7F50',
+            "Sawah": '#008080',
+            "Rawa": '#778899',
+            "Hutan Rakyat": '#7FFF00',
+            "Perkebunan": '#006400',
+            "Taman Kota": '#9ACD32',
+
             //tutupanlahananalisa
             "Permukiman":'#a0522d',
             "Non Permukiman":'#708090',
@@ -196,7 +250,8 @@
         }
     }
 
-   
+    tdk_penerangan_jrg_pemukiman.features.forEach((feature) => feature.properties.Name = "tpjp");
+
     // pemanggil fungsi get data
     getData(data2019.features);
 
@@ -233,7 +288,34 @@
         pointToLayer: pointToLayer
     });
 
-    
+    var dataLayerLampu1 = L.geoJSON([
+        ada_lampu_tdk_nyala,
+        ada_penerangan_ada_pemukiman,
+        ada_penerangan_jrg_pemukiman,
+        tdk_nyala_jrg_pemukiman,
+        tdk_penerangan_jrg_pemukiman,
+        tdkada_penerangan_ada_pemukiman,
+        tdkada_penerangan_tdkada_pemukiman1
+    ], {
+        style: function(feature) {
+            var colors = {
+                "TDKN?ALA": '#CD5C5C',
+                "TDKNYALA": '#CD5C5C',
+                "ADAPNR": '#FF1493',
+                "ADAPNRTDKPMKN": '#8B4513',
+                "TDKNYALJRJR": '#000080',
+                "tpjp": '#2F4F4F',
+                "TDKPNRPMUKN": '#800080',
+                "TDKPNRSMKI": '#9E1F13',
+            }
+
+            return {
+                "color": colors[feature.properties.Name],
+                "weight": "5",
+                "opacity": 0.65
+            }
+        }
+    });
     var legendMarker = L.layerGroup();
 
     var dataLayerBatas1 = L.geoJSON(batas_kecamatan_fix, { style: polygonStyle });
@@ -245,7 +327,22 @@
         pointToLayer: pointToLayer });
     var data_analisa_gabung = L.geoJSON(dataanalisagabung, { style: polygonStyle });
 
-    
+    var dataLayerTutupan = L.geoJSON(tutupanlahanfix, {
+        style: polygonStyle,
+        onEachFeature: function(feature, layer) {
+            if (feature.properties.T_Lahan_12 == "Taman Kota") {
+                var center = layer.getBounds().getCenter();
+                var marker = L.marker(center, {
+                    icon: L.icon({
+                        iconUrl: "{{ asset('TAMANKOTA.png') }}",
+                        iconSize: [50, 50]
+                    })
+                });
+                var polygonAndItsCenter = L.layerGroup([layer, marker]).addTo(legendMarker);
+            }
+        }
+    });
+
     //untuk PENDEFINISI legenda
     var titikkasus = L.control({ position: 'topright' });
 
@@ -258,14 +355,30 @@
             "Pencurian dengan Kekerasan (CURAS)"
         ];
 
-       
+        var garisjalan = [
+            "Ada Lampu Tidak Nyala",
+            "Ada Penerangan Ada Pemukiman",
+            "Tidak Nyala Jarang Pemukiman",
+            "Tidak Ada Penerangan Jrg Pemukiman",
+            "Tidak Ada Penerangan Ada Pemukiman",
+            "Tidak Ada Penerangan Tidak Ada Pemukiman"
+        ];
 
         var kecamatan1 = [
             "Kec. Samarinda Seberang",
             "Kec. Loa Janan Ilir"
         ];
 
-        
+        var tutupan1 = [
+            "Permukiman",
+            "Semak Belukar",
+            "Sawah",
+            "Rawa",
+            "Hutan Rakyat",
+            "Perkebunan",
+            "Taman Kota"
+        ];
+
         var fix_tutupan_lahan =[
             "Permukiman",
             "Non Permukiman"
@@ -293,7 +406,18 @@
         legendaMaker(fix_tutupan_lahan, div, 0, 15);
         legendaMaker(data_analisa_19, div, 0, 15);
 
-        
+        for (var i = 0; i < tutupan1.length - 1; i++) {
+            if (i == 1) {
+                div.innerHTML += '<i class="semak_belukar" style=" width:15px; height:10px; display:inline-block; vertical-align:baseline; ">&nbsp;&nbsp;</i>&nbsp;&nbsp;' + tutupan1[i] + '<br>';
+            } else if (i == 2) {
+                div.innerHTML += '<i class="sawah" style=" width:15px; height:10px; display:inline-block; vertical-align:baseline; ">&nbsp;&nbsp;</i>&nbsp;&nbsp;' + tutupan1[i] + '<br>';
+            } else if (i == 3) {
+                div.innerHTML += '<i class="rawa" style=" width:15px; height:10px; display:inline-block; vertical-align:baseline; ">&nbsp;&nbsp;</i>&nbsp;&nbsp;' + tutupan1[i] + '<br>';
+            } else {
+                div.innerHTML += '<i style="background:' + getLegendaColor(tutupan1[i]) + '; width:15px; height:10px; display:inline-block; vertical-align:baseline; ">&nbsp;&nbsp;</i>&nbsp;&nbsp;' + tutupan1[i] + '<br>';
+            }
+        }
+        div.innerHTML += '<img class="legenda-tanam-kota" src="{{ asset('TAMANKOTA.png') }}">' + tutupan1[i] + '<br>';
         return div;
     }
     titikkasus.addTo(map);
@@ -321,7 +445,7 @@
         formCari.setAttribute('type','text');
         formCari.setAttribute('name','cari');
         formCari.setAttribute('id','cari');
-        formCari.setAttribute('placeholder','cari nama kelurahan');
+        formCari.setAttribute('placeholder','cari');
         formCari.addEventListener('input',cari);
         divCari.appendChild(formCari);
         divSearch.appendChild(divCari);
@@ -400,12 +524,15 @@
     var baseMaps = {
         'History 2019': dataLayer2019,
         'History 2020': dataLayer2020,
+        'Penerangan': dataLayerLampu1,
+        'Tutupan Lahan': dataLayerTutupan,
         'Status Penerangan' : fix_penerangan,
         'Tutupan Lahan ' : fix_tutupan_lahan,
         'Daerah Rawan Kejahatan 2019' : data_analisa_19,
         'Daerah Rawan Kejahatan 2020' : data_analisa_20,
-        // 'data gabung' : data_gabung,
+        'data gabung' : data_gabung,
         'analisa gabung' : data_analisa_gabung,
+        'Legend marker': legendMarker,
         'Batas Administrasi Samarinda Seberang & Loa Janan Ilir': dataLayerBatas1
     };
 

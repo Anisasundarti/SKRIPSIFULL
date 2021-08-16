@@ -12,7 +12,7 @@
         <!-- Styles -->
         <style>
             body {
-                background-color: #FFFFFF;
+                background-color: #20B2AA;
                 /*color: #FFFFFF;*/
                 border: 100px;
                 font-family: 'Nunito', sans-serif;
@@ -44,8 +44,9 @@
             }
 
             .title {
-                font-size: 40px;
+                font-size: 23px;
                 text-align: center;
+                font-weight: bold ;
             }
 
             .links > a {
@@ -59,8 +60,17 @@
             }
 
             .m-b-md {
-                margin-bottom: 30px;
+                margin-bottom: 10px;
+                font-weight: bold ;
             }
+
+            .rata-tengah {
+            text-align: justify;
+            max-width: 1024px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-top: 2rem;
+        }
         </style>
     </head>
     <body class="background">
@@ -70,23 +80,33 @@
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
 
+                    @else
+                        <a href="{{ route('peta.index')}}">WebGIS</a>
+                        <!-- <a href="{{ route('login') }}">Login</a>
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}">Register</a>
-                        @endif
+                        @endif -->
                     @endauth
                 </div>
             @endif
 
          
                 <div class="title m-b-md">
-                    <img src="{{asset('Lambang_Polri.png')}}"style="width: 200px;height: 200px;"> 
+                    <img src="{{asset('Lambang_Polri.png')}}"style="width: 150px;height: 150px;"> 
                     <br> SISTEM INFORMASI GEOGRAFIS
-                    <br> DAERAH RAWAN KEJAHATAN DI KECAMATAN LOA JANAN ILIR DAN KECAMATAN SAMARINDA SEBERANG 
-                    <br>KOTA SAMARINDA 
-                </div>
+                    <br> DAERAH RAWAN KEJAHATAN DI KECAMATAN SAMARINDA SEBERANG DAN KECAMATAN LOA JANAN ILIR 
+                                        
+                <!-- <div class="rata-tengah">
+                    <p>Aplikasi website ini berisikan informasi berupa daerah rawan kejahatan di Kecamatan Samarinda Seberang Dan Loa Janan Ilir. Yang disertai dengan parameter yang digunakan pada saat penelitian berlangsung. Data Historis ini diperoleh dari Polsek Samarinda Seberang dan peneliti sudah meminta izin untuk pembuatan website ini. Pembuatan website ini serta pengolahan data yang digunakan kurang lebih sekitar 7 bulan sebagai syarat kelulusan pada semester akhir. Semoga aplikasi ini dapat membantu dan mempermudah masyarakat umum dalam mendapatkan informasi terkait daerah rawan.</p>        
+                    <p>Adapun prosedur untuk masuk aplikasi ini sebagai berikut :<br>
+                        1. Informasi mengenai daerah rawan disajikan dalam bentuk WebGIS, silahkan klik Tombol WebGIS di pojok kanan atas website ini. <br>
+                        2. Terdapat parameter dan informasi yang digunakan untuk membangun WebGIS ini, yang terdapat pada menu peta lokasi. <br>
+                        3. Button Pencarian pada peta, dapat digunakan untuk mencari daerah yang rawan di Kecamatan Samarinda Seberang dan Loa Janan ilir dengan menginputkan nama kelurahan sesuai dengan nama yang tertera pada peta. Contoh Rapak Dalam. <br>
+                        4. Jika menggunakan smartphone saat membuka website ini, silahkan klik tombol<img src="{{asset('toggle.png')}}"style="width: 20px;height: 20px;"> agar informasi legenda dapat ditutup dan dibuka.
+                        </p>
+                    </div>
+                </div> -->
 
         </div>
     </body>

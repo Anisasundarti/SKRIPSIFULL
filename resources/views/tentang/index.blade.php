@@ -16,12 +16,12 @@
     <style type="text/css">
         .rata-kiri {
             text-align: left;
-            font-size: 20px;
+            font-size: 17px;
             font-weight: bold;
         }
         .link {
-            text-align: center;
-            font-size: 18px;
+            text-align: left;
+            font-size: 13px;
             font-weight: bold;
         }
         .gambar {
@@ -40,19 +40,15 @@
                             <img src="{{asset('anisa.jpg')}}" width="250px"></div>
                             <!-- <img src="{{asset('Lambang_Polri.png')}}" width="250px"></div> -->
                         <div class="rata-kiri">
-                            
-                            <p>Nama     : Anisa Sundarti</p>
-                            <p>NIM      : H171600574 </p>
-                            <p>Jurusan  : Manajemen Pertanian </p>
-                            <p>Prodi    : Teknologi Rekayasa Perangkat Lunak</p>
-                            <p>Alamat   : Perumahan Pinang Bahari Sebelah Mushola 
-                                          As Shiddiq Kelurahan Gunung Panjang Kecamatan Samarinda Seberang</p>
-                                          <br><br><br>
+                            <p> Saya Anisa Sundarti dengan NIM H171600574 Jurusan Manajemen Pertanian dari Pogram Studi Teknologi Rekayasa Perangkat Lunak di Politeknik Pertanian Negeri Samarinda sekarang sedang tinggal di Perumahan Pinang Bahari Sebelah Mushola As Shiddiq Kelurahan Gunung Panjang Kecamatan Samarinda Seberang. Tanpa bantuan Allah, kedua orang tua saya, dosen pembimbing dan teman-teman saya, website ini tidak selesai seperti saat ini.</p><br>
                         <div class="link">
                             <p>Kontak Admin : </p>
-                            <a href="https://www.instagram.com/_anssund/"><p>Instagram: @_anssund </p></a>
-                            <a href="https://web.facebook.com/anisa.sundarti"><p>Facebook : Anisa Sundarti </p></a>
-                            <a href="sundartianisa@gmail.com"><p>sundartianisa@gmail.com</p></a>
+                            <a href="https://www.instagram.com/_anssund/"><p>
+                            <img src="{{asset('ig.jpg')}}"style="width: 55px;height: 45px;"><br>@_anssund </p></a>
+                            <a href="https://web.facebook.com/anisa.sundarti"><p>
+                            <img src="{{asset('fb.jpg')}}"style="width: 55px;height: 45px;"><br>Anisa Sundarti </p></a>
+                            <a href="sundartianisa@gmail.com"><p>
+                            <img src="{{asset('Gmail.png')}}"style="width: 45px;height: 45px;"><br>sundartianisa@gmail.com</p></a>
                         </div>
                     </div>
                 </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Waktu pembuatan: 22 Jun 2021 pada 01.40
+-- Waktu pembuatan: 15 Jul 2021 pada 14.39
 -- Versi server: 5.7.33
 -- Versi PHP: 7.4.19
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `dbkejahatan`
+-- Database: `dbkejahatanskripsi`
 --
 
 -- --------------------------------------------------------
@@ -59,33 +59,11 @@ CREATE TABLE `files` (
 INSERT INTO `files` (`id`, `nama`, `path`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (10, 'data2020', 'data2020/data2020.json', '2021-06-20 23:40:43', '2021-06-20 23:40:43', NULL),
 (11, 'data2019', 'data2019/data2019.json', '2021-06-20 23:50:01', '2021-06-20 23:50:01', NULL),
-(15, 'ada_lampu_tdk_nyala1', 'ada_lampu_tdk_nyala1/ada_lampu_tdk_nyala1.json', '2021-06-21 17:34:25', '2021-06-21 17:34:25', NULL),
-(16, 'ada_lampu_tdk_nyala2', 'ada_lampu_tdk_nyala2/ada_lampu_tdk_nyala2.json', '2021-06-21 17:37:06', '2021-06-21 17:37:06', NULL),
-(17, 'ada_lampu_tdk_nyala3', 'ada_lampu_tdk_nyala3/ada_lampu_tdk_nyala3.json', '2021-06-21 17:38:31', '2021-06-21 17:38:31', NULL),
-(18, 'ada_penerangan_ada_pemukiman1', 'ada_penerangan_ada_pemukiman1/ada_penerangan_ada_pemukiman1.json', '2021-06-21 17:40:14', '2021-06-21 17:40:14', NULL),
-(19, 'ada_penerangan_ada_pemukiman2', 'ada_penerangan_ada_pemukiman2/ada_penerangan_ada_pemukiman2.json', '2021-06-21 17:41:38', '2021-06-21 17:41:38', NULL),
-(20, 'ada_penerangan_ada_pemukiman3', 'ada_penerangan_ada_pemukiman3/ada_penerangan_ada_pemukiman3.json', '2021-06-21 17:59:35', '2021-06-21 17:59:35', NULL),
-(21, 'ada_penerangan_jrg_pemukiman1', 'ada_penerangan_jrg_pemukiman1/ada_penerangan_jrg_pemukiman1.json', '2021-06-21 18:01:13', '2021-06-21 18:01:13', NULL),
-(22, 'ada_penerangan_jrg_pemukiman2', 'ada_penerangan_jrg_pemukiman2/ada_penerangan_jrg_pemukiman2.json', '2021-06-21 18:01:30', '2021-06-21 18:01:30', NULL),
-(23, 'ada_penerangan_jrg_pemukiman3', 'ada_penerangan_jrg_pemukiman3/ada_penerangan_jrg_pemukiman3.json', '2021-06-21 18:01:45', '2021-06-21 18:01:45', NULL),
-(24, 'ada_penerangan_jrg_pemukiman4', 'ada_penerangan_jrg_pemukiman4/ada_penerangan_jrg_pemukiman4.json', '2021-06-21 18:02:00', '2021-06-21 18:02:00', NULL),
-(25, 'ada_penerangan_jrg_pemukiman5', 'ada_penerangan_jrg_pemukiman5/ada_penerangan_jrg_pemukiman5.json', '2021-06-21 18:02:14', '2021-06-21 18:02:14', NULL),
-(26, 'ada_penerangan_jrg_pemukiman6', 'ada_penerangan_jrg_pemukiman6/ada_penerangan_jrg_pemukiman6.json', '2021-06-21 18:02:30', '2021-06-21 18:02:30', NULL),
-(27, 'ada_penerangan_jrg_pemukiman7', 'ada_penerangan_jrg_pemukiman7/ada_penerangan_jrg_pemukiman7.json', '2021-06-21 18:02:45', '2021-06-21 18:02:45', NULL),
-(28, 'batas_wil_smd_seberang', 'batas_wil_smd_seberang/batas_wil_smd_seberang.json', '2021-06-21 18:03:07', '2021-06-21 18:03:07', NULL),
-(29, 'tdk_nyala_jrg_pemukiman1', 'tdk_nyala_jrg_pemukiman1/tdk_nyala_jrg_pemukiman1.json', '2021-06-21 18:03:36', '2021-06-21 18:03:36', NULL),
-(30, 'tdk_nyala_jrg_pemukiman2', 'tdk_nyala_jrg_pemukiman2/tdk_nyala_jrg_pemukiman2.json', '2021-06-21 18:03:54', '2021-06-21 18:03:54', NULL),
-(31, 'tdk_nyala_jrg_pemukiman3', 'tdk_nyala_jrg_pemukiman3/tdk_nyala_jrg_pemukiman3.json', '2021-06-21 18:04:13', '2021-06-21 18:04:13', NULL),
-(32, 'tdk_penerangan_jrg_pemukiman1', 'tdk_penerangan_jrg_pemukiman1/tdk_penerangan_jrg_pemukiman1.json', '2021-06-21 18:05:21', '2021-06-21 18:05:21', NULL),
-(33, 'tdk_penerangan_jrg_pemukiman2', 'tdk_penerangan_jrg_pemukiman2/tdk_penerangan_jrg_pemukiman2.json', '2021-06-21 18:05:41', '2021-06-21 18:05:41', NULL),
-(34, 'tdkada_penerangan_ada_pemukiman1', 'tdkada_penerangan_ada_pemukiman1/tdkada_penerangan_ada_pemukiman1.json', '2021-06-21 18:06:08', '2021-06-21 18:06:08', NULL),
-(35, 'tdkada_penerangan_ada_pemukiman2', 'tdkada_penerangan_ada_pemukiman2/tdkada_penerangan_ada_pemukiman2.json', '2021-06-21 18:06:25', '2021-06-21 18:06:25', NULL),
-(36, 'tdkada_penerangan_ada_pemukiman3', 'tdkada_penerangan_ada_pemukiman3/tdkada_penerangan_ada_pemukiman3.json', '2021-06-21 18:06:41', '2021-06-21 18:06:41', NULL),
-(37, 'tdkada_penerangan_ada_pemukiman4', 'tdkada_penerangan_ada_pemukiman4/tdkada_penerangan_ada_pemukiman4.json', '2021-06-21 18:06:59', '2021-06-21 18:06:59', NULL),
-(38, 'tdkada_penerangan_ada_pemukiman5', 'tdkada_penerangan_ada_pemukiman5/tdkada_penerangan_ada_pemukiman5.json', '2021-06-21 18:07:18', '2021-06-21 18:07:18', NULL),
-(39, 'tdkada_penerangan_ada_pemukiman6', 'tdkada_penerangan_ada_pemukiman6/tdkada_penerangan_ada_pemukiman6.json', '2021-06-21 18:07:44', '2021-06-21 18:07:44', NULL),
-(40, 'tdkada_penerangan_ada_pemukiman7', 'tdkada_penerangan_ada_pemukiman7/tdkada_penerangan_ada_pemukiman7.json', '2021-06-21 18:08:04', '2021-06-21 18:08:04', NULL),
-(41, 'tdkada_penerangan_tdkada_pemukiman1', 'tdkada_penerangan_tdkada_pemukiman1/tdkada_penerangan_tdkada_pemukiman1.json', '2021-06-21 18:09:05', '2021-06-21 18:09:05', NULL);
+(62, 'tutupan_lahan', 'tutupan_lahan/tutupan_lahan.json', '2021-07-15 06:47:17', '2021-07-15 06:47:17', NULL),
+(63, 'penerangan', 'penerangan/penerangan.json', '2021-07-15 06:47:36', '2021-07-15 06:47:36', NULL),
+(64, 'analisadata2019', 'analisadata2019/analisadata2019.json', '2021-07-15 06:48:08', '2021-07-15 06:48:08', NULL),
+(65, 'analisadata2020', 'analisadata2020/analisadata2020.json', '2021-07-15 06:48:30', '2021-07-15 06:48:30', NULL),
+(66, 'batas_kecamatan_fix', 'batas_kecamatan_fix/batas_kecamatan_fix.json', '2021-07-15 06:48:47', '2021-07-15 06:48:47', NULL);
 
 -- --------------------------------------------------------
 
@@ -315,28 +293,6 @@ CREATE TABLE `penggunaan` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `peta_data`
---
-
-CREATE TABLE `peta_data` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `url` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data untuk tabel `peta_data`
---
-
-INSERT INTO `peta_data` (`id`, `name`, `url`, `created_at`, `updated_at`) VALUES
-(1, '2019', 'http://localhost:8081/geoserver/data2019/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=data2019%3Adata2019&maxFeatures=50&outputFormat=application%2Fjson', NULL, '2021-06-04 00:53:30'),
-(2, '2020', 'http://localhost:8081/geoserver/data2020/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=data2020%3Adata2020&maxFeatures=50&outputFormat=application%2Fjson', NULL, '2021-06-02 07:00:39');
-
--- --------------------------------------------------------
-
---
 -- Struktur dari tabel `tahuns`
 --
 
@@ -394,8 +350,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `alamat`, `telepon`, `remember_token`, `is_admin`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(15, 'sundy', 'sundy@gmail.com', NULL, '$2y$10$DdmjZ1wRNQFNK7VVPqZJTuapIvyHJ/7Z1sTZzl7WBR1B87UBuL/Fi', 'samboja', 987654321, 'dUGL1uFK9MhxEk5DHuJFJqw7nQ0sVEUwd6COcgbmdQNqFiudFbAFRJnjh2Ej', 1, '2021-05-30 23:50:26', '2021-05-30 23:50:26', NULL),
-(16, 'hgh', 'h@gmail.com', NULL, '$2y$10$y7D4d3PEH0tcA2xXg/TFMun0.EQ4IKUp1aR8DQS.HibuBl1QfvtUm', 'hjh', 987654321, NULL, NULL, '2021-06-05 09:12:33', '2021-06-05 09:12:33', NULL);
+(15, 'sundy', 'sundy@gmail.com', NULL, '$2y$10$DdmjZ1wRNQFNK7VVPqZJTuapIvyHJ/7Z1sTZzl7WBR1B87UBuL/Fi', 'samboja', 987654321, 'G9CpP7ww4zwO3CWiNG0cbwHr48u5k4z9BQj37wKkAGX7Xv1VN6cHeSx04rs1', 1, '2021-05-30 23:50:26', '2021-05-30 23:50:26', NULL),
+(16, 'hgh', 'h@gmail.com', NULL, '$2y$10$y7D4d3PEH0tcA2xXg/TFMun0.EQ4IKUp1aR8DQS.HibuBl1QfvtUm', 'hjh', 987654321, NULL, NULL, '2021-06-05 09:12:33', '2021-06-05 09:12:33', NULL),
+(17, 'mata', 'mata@gmail.com', NULL, '$2y$10$LiDQGKpDFsw7xpfo4Yr/iONRuXvacvIzmMmmM7MjRsPu/91wfDCGi', 'samboja', 852131387, NULL, NULL, '2021-07-08 05:23:29', '2021-07-08 05:23:29', NULL);
 
 --
 -- Indexes for dumped tables
@@ -461,12 +418,6 @@ ALTER TABLE `penggunaan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `peta_data`
---
-ALTER TABLE `peta_data`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indeks untuk tabel `tahuns`
 --
 ALTER TABLE `tahuns`
@@ -499,7 +450,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT untuk tabel `files`
 --
 ALTER TABLE `files`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT untuk tabel `jenis_kejahatan`
@@ -538,12 +489,6 @@ ALTER TABLE `penggunaan`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `peta_data`
---
-ALTER TABLE `peta_data`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
 -- AUTO_INCREMENT untuk tabel `tahuns`
 --
 ALTER TABLE `tahuns`
@@ -559,7 +504,7 @@ ALTER TABLE `tentang`
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
